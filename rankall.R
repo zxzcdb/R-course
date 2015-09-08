@@ -3,10 +3,7 @@ rankall <- function(outcome, num = "best") {
   ## Read outcome data
   complete.data <- read.csv("outcome-of-care-measures.csv")
   
-  ##Check that state and outcome are valid
-  if (!(state %in% complete.data$State)){
-    stop("invalid state")
-  } 
+  ##Check if outcome is valid
   disease.index <- c("heart attack", "heart failure", "pneumonia")
   if (!(outcome %in% disease.index)){
     stop("invalid outcome")
